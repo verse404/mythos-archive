@@ -1,0 +1,523 @@
+import type { CanonicalBook } from '../types/mythology';
+
+export const CANONICAL_BOOKS: CanonicalBook[] = [
+  // ================= GREEK =================
+  {
+    id: 'homer-iliad-odyssey',
+    title: 'The Iliad & The Odyssey',
+    nativeTitle: 'Ἰλιάς & Ὀδύσσεια',
+    traditionId: 'greek',
+    dateComposed: 'c. 750–700 BCE',
+    medium: 'Papyrus & Tomb Stone',
+    authorOrCompiler: 'Homer (Oral Aoidoi Tradition)',
+    platePath: '/plates/books/homer-iliad-odyssey.webp',
+    tagline: 'Monumental hexameter epics of wrath at Troy, divine partisan intervention, and Odysseus’s ten-year homecoming.',
+    synopsis:
+      'Composed in dactylic hexameter out of centuries of Bronze Age oral song, the Iliad probes mortal kleos (undying glory) and grief during fifty-one days of the Trojan War, while the Odyssey charts cunning metis across Cyclops caves, Circe’s island, and the threshold of Hades.',
+    famousPassage:
+      'As is the generation of leaves, so is that of humanity: the wind scatters the leaves on the ground, but the live timber burgeoning with leaves grows again in the season of spring.',
+    famousPassageCitation: 'Iliad VI.146–149',
+    keyMythsIncluded: [
+      'Wrath of Achilles, Hector’s Fall & Priam’s Ransom',
+      'Olympian Council & Partisan Gods on the Plain of Troy',
+      'Odysseus’s Nekyia (Summoning Shades at the Edge of Hades)',
+      'Polyphemus, Sirens, Scylla & Homecoming to Ithaca',
+    ],
+    recommendedTranslation: 'Emily Wilson (Norton, 2018 & 2023) or Richmond Lattimore (Chicago)',
+    linkedDeityIds: ['zeus', 'athena', 'hermes', 'hades'],
+    linkedMotifId: 'katabasis',
+  },
+  {
+    id: 'hesiod-theogony',
+    title: 'Theogony & Works and Days',
+    nativeTitle: 'Θεογονία & Ἔργα καὶ Ἡμέραι',
+    traditionId: 'greek',
+    dateComposed: 'c. 700 BCE',
+    medium: 'Papyrus & Tomb Stone',
+    authorOrCompiler: 'Hesiod of Ascra (Boeotia)',
+    platePath: '/plates/books/hesiod-theogony.webp',
+    tagline: 'Greece’s foundational cosmic genealogy—from primordial Chaos and Titan wars to Prometheus’s stolen fire.',
+    synopsis:
+      'Inspired by the Muses on Mount Helicon, Hesiod systematized three hundred deities from yawning Chaos to Zeus’s triumph over Kronos and monster Typhon, pairing cosmic myth in the Theogony with Prometheus, Pandora, and the Five Ages of Man in Works and Days.',
+    famousPassage:
+      'First of all, Chaos came into being; and next broad-bosomed Gaia, the ever-sure foundation of all the immortals who hold the peaks of snowy Olympus.',
+    famousPassageCitation: 'Theogony 116–118',
+    keyMythsIncluded: [
+      'Emergence of Chaos, Gaia, Tartarus & Eros',
+      'Overthrow of Ouranos & the Ten-Year Titanomachy',
+      'Zeus’s Duel Against Hundred-Headed Typhon',
+      'Prometheus’s Fennel-Stalk Fire, Pandora’s Jar & Five Ages',
+    ],
+    recommendedTranslation: ' Glenn W. Most (Loeb Classical Library) or M. L. West (Oxford World’s Classics)',
+    linkedDeityIds: ['zeus', 'athena', 'hades'],
+    linkedMotifId: 'theft-of-fire',
+  },
+
+  // ================= NORSE =================
+  {
+    id: 'poetic-edda',
+    title: 'The Poetic Edda (Codex Regius)',
+    nativeTitle: 'Konungsbók Eddukvæða',
+    traditionId: 'norse',
+    dateComposed: 'Oral roots c. 800–1000 CE; MS c. 1270 CE',
+    medium: 'Vellum Codex',
+    authorOrCompiler: 'Anonymous Viking Age Skalds & Icelandic Scribes',
+    platePath: '/plates/books/poetic-edda.webp',
+    tagline: 'Terse, haunting alliterative lays preserving Völuspá’s apocalypse, Odin’s rune-sacrifice, and Loki’s flyting.',
+    synopsis:
+      'Rediscovered on a single weathered calfskin manuscript in Iceland in 1643, the Poetic Edda contains the oldest surviving Norse mythological poems—opening with a dead seeress summoned by Odin to recount creation from Ymir through the fiery twilight of Ragnarök.',
+    famousPassage:
+      'Cattle die, kinsmen die, the self must also die; / I know one thing that never dies: the judgement on each dead man.',
+    famousPassageCitation: 'Hávamál ("Sayings of the High One"), Stanza 77',
+    keyMythsIncluded: [
+      'Völuspá: Creation from Ymir, Baldr’s Doom & Ragnarök',
+      'Hávamál: Odin Hanging Nine Nights on Yggdrasil for Runes',
+      'Þrymskviða & Hymiskviða: Thor’s Stolen Hammer & Serpent Fishing',
+      'Lokasenna: Loki’s Unsparing Accusations in Ægir’s Hall',
+    ],
+    recommendedTranslation: 'Carolyne Larrington (Oxford World’s Classics, rev. ed.) or Jackson Crawford',
+    linkedDeityIds: ['odin', 'thor', 'loki', 'hel'],
+    linkedMotifId: 'eschatology',
+  },
+  {
+    id: 'prose-edda',
+    title: 'The Prose Edda (Gylfaginning & Skáldskaparmál)',
+    nativeTitle: 'Snorra Edda',
+    traditionId: 'norse',
+    dateComposed: 'c. 1220 CE',
+    medium: 'Vellum Codex',
+    authorOrCompiler: 'Snorri Sturluson (Reykholt, Iceland)',
+    platePath: '/plates/books/prose-edda.webp',
+    tagline: 'Masterful narrative synthesis preserving the Mead of Poetry, Fenrir’s binding, and Hermod’s ride to Hel.',
+    synopsis:
+      'Written so young Icelandic poets would never forget the mythic stories behind traditional skaldic kennings, Snorri’s handbook preserves priceless full narratives that survive nowhere else—from Auðumbla in Ginnungagap and Sleipnir’s birth to Baldr’s funeral ship.',
+    famousPassage:
+      'Long ago, when nothing was, there was neither sand nor sea nor cool waves... there was a yawning chasm called Ginnungagap.',
+    famousPassageCitation: 'Gylfaginning, Chapter 4',
+    keyMythsIncluded: [
+      'Ginnungagap, Auðumbla & Fashioning Midgard from Ymir',
+      'Binding of Fenrir with the Silken Ribbon Gleipnir',
+      'Odin’s Theft of Suttungr’s Mead of Poetry',
+      'Death of Baldr, Hermod’s Ride to Hel & Thökk’s Refusal',
+    ],
+    recommendedTranslation: 'Anthony Faulkes (Everyman) or Jesse Byock (Penguin Classics)',
+    linkedDeityIds: ['odin', 'thor', 'loki', 'hel'],
+    linkedMotifId: 'cosmogony',
+  },
+
+  // ================= EGYPTIAN =================
+  {
+    id: 'pyramid-texts',
+    title: 'The Pyramid Texts & Coffin Texts',
+    nativeTitle: 'Mdw Nṯr ("Sacred Words of Saqqara")',
+    traditionId: 'egyptian',
+    dateComposed: 'c. 2400–2000 BCE',
+    medium: 'Papyrus & Tomb Stone',
+    authorOrCompiler: 'Old & Middle Kingdom Heliopolitan Priests',
+    platePath: '/plates/books/pyramid-texts.webp',
+    tagline: 'Humanity’s oldest surviving corpus of religious scripture, chiselled in subterranean royal limestone chambers.',
+    synopsis:
+      'First carved inside the Fifth Dynasty pyramid of Pharaoh Unas at Saqqara, these hundreds of ritual utterances chart the primeval mound of Atum-Ra, the dismemberment and resurrection of Osiris, and the soul’s ascent among the Imperishable Circumpolar Stars.',
+    famousPassage:
+      'O Atum-Khepri, you became high on the height, you rose up as the Benben-stone in the Mansion of the Phoenix in Heliopolis!',
+    famousPassageCitation: 'Pyramid Text Utterance 600 (§1652)',
+    keyMythsIncluded: [
+      'Emergence of Atum-Ra upon the Primeval Benben Mound',
+      'Separation of Geb (Earth) and Nut (Sky) by Shu',
+      'Isis & Nephthys Reassembling Slain Osiris',
+      'Pharaoh Joining Ra’s Imperishable Solar & Stellar Crew',
+    ],
+    recommendedTranslation: 'James P. Allen, The Ancient Egyptian Pyramid Texts (SBL)',
+    linkedDeityIds: ['ra', 'osiris', 'set', 'thoth'],
+    linkedMotifId: 'cosmogony',
+  },
+  {
+    id: 'book-of-the-dead',
+    title: 'Book of Coming Forth by Day (Book of the Dead) & Amduat',
+    nativeTitle: 'Rw nw prt m hrw',
+    traditionId: 'egyptian',
+    dateComposed: 'c. 1550–50 BCE',
+    medium: 'Papyrus & Tomb Stone',
+    authorOrCompiler: 'New Kingdom Temple Scribes (e.g., Papyrus of Ani)',
+    platePath: '/plates/books/book-of-the-dead.webp',
+    tagline: 'Illuminated funerary papyri staging the Weighing of the Heart against Ma’at and Ra’s midnight duel with Apophis.',
+    synopsis:
+      'Paired with royal tomb books like the Amduat ("What Is in the Underworld"), these vividly painted papyrus scrolls guide souls past cavern gatekeepers into the Hall of Two Truths, where Anubis weighs the heart against Ma’at’s ostrich feather while Thoth records the verdict.',
+    famousPassage:
+      'I have not impoverished the poor; I have not caused pain; I have not made anyone weep; I have not tipped the scales of truth.',
+    famousPassageCitation: 'Spell 125 (The Negative Confession, Papyrus of Ani)',
+    keyMythsIncluded: [
+      'Spell 125: Weighing of the Heart Before Osiris & 42 Judges',
+      'Seventh Hour of Amduat: Set Spearing Chaos-Serpent Apophis',
+      'Thoth Healing the Torn Lunar Eye (Wedjat) of Horus',
+      'Entry into the Blessed Field of Reeds (Sekhet-Aaru)',
+    ],
+    recommendedTranslation: 'Raymond O. Faulkner & Ogden Goelet (Chronicle Books) or Stephen Quirke',
+    linkedDeityIds: ['osiris', 'thoth', 'ra', 'set'],
+    linkedMotifId: 'chaoskampf',
+  },
+
+  // ================= HINDU =================
+  {
+    id: 'rigveda',
+    title: 'The Rigveda & Principal Upanishads',
+    nativeTitle: 'ऋग्वेदः & उपनिषदः',
+    traditionId: 'hindu',
+    dateComposed: 'c. 1500–500 BCE',
+    medium: 'Oral & Palm-Leaf',
+    authorOrCompiler: 'Vedic Rishis (Seer-Poet Lineages)',
+    platePath: '/plates/books/rigveda.webp',
+    tagline: '1,028 precision-memorized Sanskrit hymns—from Indra slaying Vritra to the radical cosmic skepticism of Nasadiya Sukta.',
+    synopsis:
+      'Transmitted with syllable-perfect acoustic fidelity across three millennia, the Rigveda celebrates storm-champion Indra, sacred fire Agni, river-speech Saraswati, and first-mortal Yama, culminating in Upanishadic dialogues like young Nachiketa questioning Death itself.',
+    famousPassage:
+      'Then even non-existence was not, nor existence. There was no air then, nor the diagnostic sky beyond it. Who really knows? Perhaps even the Overseer in highest heaven knows—or perhaps even He does not know.',
+    famousPassageCitation: 'Rigveda 10.129 (Nasadiya Sukta)',
+    keyMythsIncluded: [
+      'Rigveda 1.32: Indra Shattering Drought-Serpent Vritra with the Vajra',
+      'Rigveda 10.90 (Purusha Sukta): Cosmic Person Offered into Creation',
+      'Rigveda 10.129 (Nasadiya Sukta): Hymn of Origins',
+      'Katha Upanishad: Fearless Nachiketa’s Three Boons from Yama',
+    ],
+    recommendedTranslation: 'Stephanie W. Jamison & Joel P. Brereton (Oxford, 3 vols.) / Patrick Olivelle (Upanishads)',
+    linkedDeityIds: ['indra', 'saraswati', 'yama', 'shiva'],
+    linkedMotifId: 'chaoskampf',
+  },
+  {
+    id: 'mahabharata-ramayana',
+    title: 'The Mahabharata (with Bhagavad Gita), Ramayana & Puranas',
+    nativeTitle: 'महाभारतम् · रामायणम् · पुराणानि',
+    traditionId: 'hindu',
+    dateComposed: 'c. 400 BCE – 600 CE',
+    medium: 'Oral & Palm-Leaf',
+    authorOrCompiler: 'Vyasa & Valmiki Traditions',
+    platePath: '/plates/books/mahabharata-ramayana.webp',
+    tagline: 'Humanity’s longest epic poems—staging Dharmic moral crisis, Vishnu’s ten avatars, and the Churning of the Cosmic Ocean.',
+    synopsis:
+      'Seven times the combined length of the Iliad and Odyssey, the Mahabharata ("What is found here may be found elsewhere; what is not here is nowhere") joins Valmiki’s Ramayana and the Bhagavata Purana to explore cosmic Yugas, Shiva drinking world-poison, and Krishna’s Gita counsel.',
+    famousPassage:
+      'Whenever Dharma declines and Adharma rises, O descendant of Bharata, then I manifest Myself from age to age to restore cosmic order.',
+    famousPassageCitation: 'Bhagavad Gita 4.7–8 (Mahabharata Book VI)',
+    keyMythsIncluded: [
+      'Samudra Manthana: Churning the Ocean of Milk & Shiva’s Blue Throat',
+      'Matsya Purana: Horned Cosmic Fish Saving Manu from the Deluge',
+      'Ramayana: Rama, Sita, Hanuman & Ten-Headed Scholar-King Ravana',
+      'Kurukshetra & Bhagavad Gita: Krishna Unveiling His Cosmic Form',
+    ],
+    recommendedTranslation: 'John D. Smith (Penguin Mahabharata), Barbara Stoler Miller (Gita), Robert P. Goldman (Ramayana)',
+    linkedDeityIds: ['shiva', 'indra', 'yama', 'saraswati'],
+    linkedMotifId: 'great-deluge',
+  },
+
+  // ================= CHINESE =================
+  {
+    id: 'shan-hai-jing',
+    title: 'Shan Hai Jing & Chu Ci (Heavenly Questions)',
+    nativeTitle: '山海經 & 楚辭·天問',
+    traditionId: 'chinese',
+    dateComposed: 'c. 400 BCE – 100 CE',
+    medium: 'Bamboo & Woodblock',
+    authorOrCompiler: 'Warring States–Han Geographers & Qu Yuan',
+    platePath: '/plates/books/shan-hai-jing.webp',
+    tagline: 'Archaic mythic atlas of sacred peaks, Nuwa mending the sky, Yu taming floods, and Qu Yuan’s 172 cosmic questions.',
+    synopsis:
+      'Combining shamanic cartography with Warring States verse (paired with the Huainanzi), these texts preserve China’s foundational pre-imperial myths: Nuwa smelting five-colored stones, Hou Yi shooting down nine excess suns, Xiwangmu on Kunlun, and Yu dredging the Nine Provinces.',
+    famousPassage:
+      'Regarding the beginning of remote antiquity, who passed down the tale? When above and below had not yet taken shape, by what means were they examined?',
+    famousPassageCitation: 'Qu Yuan, Tianwen ("Heavenly Questions," Chu Ci)',
+    keyMythsIncluded: [
+      'Nuwa Smelting Five-Colored Stones & Propping Sky with Tortoise Legs',
+      'Gun’s Breathing Soil vs. Yu the Great & Winged Dragon Yinglong',
+      'Archer Hou Yi Shooting Nine Suns & Chang’e’s Elixir Flight to the Moon',
+      'Xiwangmu (Queen Mother of the West) on Sacred Mount Kunlun',
+    ],
+    recommendedTranslation: 'Anne Birrell, The Classic of Mountains and Seas (Penguin Classics) & Gopal Sukhu (Chu Ci)',
+    linkedDeityIds: ['nuwa', 'jade-emperor'],
+    linkedMotifId: 'great-deluge',
+  },
+  {
+    id: 'journey-to-the-west',
+    title: 'Journey to the West & Investiture of the Gods',
+    nativeTitle: '西遊記 & 封神演義',
+    traditionId: 'chinese',
+    dateComposed: '1592 CE (Ming Dynasty)',
+    medium: 'Bamboo & Woodblock',
+    authorOrCompiler: 'Wu Cheng’en (attr.) & Xu Zhonglin',
+    platePath: '/plates/books/journey-to-the-west.webp',
+    tagline: 'Towering Ming synthesis uniting Sun Wukong’s rebellion against Heaven and Diyu with Daoist and Buddhist enlightenment.',
+    synopsis:
+      'One of the Four Great Classical Novels, Journey to the West fuses centuries of folk drama, Daoist internal alchemy, the Jade Emperor’s celestial ministries, and Yanluo Wang’s Ten Courts into the unforgettable hundred-chapter odyssey of Monkey King Sun Wukong and monk Xuanzang.',
+    famousPassage:
+      'Since the creation of the world by Pangu, atop the Mountain of Flowers and Fruit stood an immortal stone nourished by the seeds of Sun and Moon until it burst open to birth a stone monkey.',
+    famousPassageCitation: 'Journey to the West, Chapter 1',
+    keyMythsIncluded: [
+      'Sun Wukong Erasing His Name in Yanluo Wang’s Underworld Ledger',
+      'Havoc in Heaven: Stealing Kunlun Peaches & Laozi’s Furnace Trial',
+      'Wager Against Buddha’s Palm & Five Centuries Under Five-Phases Peak',
+      'Eighty-One Trials Escorting Tang Sanzang to Vulture Peak',
+    ],
+    recommendedTranslation: 'Anthony C. Yu (University of Chicago Press, 4 vols. or abridged)',
+    linkedDeityIds: ['sun-wukong', 'jade-emperor', 'yanluo-wang', 'nuwa'],
+    linkedMotifId: 'theft-of-fire',
+  },
+
+  // ================= JAPANESE =================
+  {
+    id: 'kojiki',
+    title: 'Kojiki (Records of Ancient Matters)',
+    nativeTitle: '古事記',
+    traditionId: 'japanese',
+    dateComposed: '712 CE (Nara Period)',
+    medium: 'Bamboo & Woodblock',
+    authorOrCompiler: 'Recited by Hieda no Are; Inscribed by Ō no Yasumaro',
+    platePath: '/plates/books/kojiki.webp',
+    tagline: 'Japan’s oldest surviving chronicle—recording Izanagi in Yomi, Amaterasu’s Rock Cave, and Susanoo’s eight-headed dragon.',
+    synopsis:
+      'Commissioned by Empress Genmei to preserve oral clan recitals (Teiki and Kyūji), Book I ("Age of the Kami") narrates the churning of Japan’s islands with a jeweled spear, the tragic threshold of Yomi, river purification birthing Amaterasu, and Ōkuninushi’s Izumo cycle.',
+    famousPassage:
+      'When chaos had begun to condense, but force and form were not yet manifest... three deities came into existence alone on the High Plain of Heaven.',
+    famousPassageCitation: 'Kojiki, Preface & Book I.1',
+    keyMythsIncluded: [
+      'Izanagi & Izanami Churning Onogoro Island & Descent to Yomi',
+      'Misogi Purification Birthing Amaterasu, Tsukuyomi & Susanoo',
+      'Ama-no-Iwato: Omoikane’s Mirror Ritual at the Heavenly Rock Cave',
+      'Susanoo Slaying Yamata no Orochi & Finding Sword Kusanagi',
+    ],
+    recommendedTranslation: 'Gustav Heldt, The Kojiki: An Account of Ancient Matters (Columbia University Press)',
+    linkedDeityIds: ['amaterasu', 'susanoo', 'izanami', 'omoikane'],
+    linkedMotifId: 'katabasis',
+  },
+  {
+    id: 'nihon-shoki',
+    title: 'Nihon Shoki & Provincial Fudoki',
+    nativeTitle: '日本書紀 & 風土記',
+    traditionId: 'japanese',
+    dateComposed: '720 CE (Nara Period)',
+    medium: 'Bamboo & Woodblock',
+    authorOrCompiler: 'Prince Toneri & Nara Court Historians',
+    platePath: '/plates/books/nihon-shoki.webp',
+    tagline: 'Polyphonic imperial chronicle preserving multiple oral variants alongside regional shrine folklore across Japan.',
+    synopsis:
+      'Uniquely transparent for an ancient sacred text, the Nihon Shoki ("Chronicles of Japan") sets rival oral traditions side-by-side ("In one book it is said..."), including Tsukuyomi slaying food-goddess Uke Mochi (explaining why Sun and Moon never share the sky), complemented by local Fudoki gazetteers.',
+    famousPassage:
+      'Of old, Heaven and Earth were not yet separated, and the In and Yo not yet divided. They formed a chaotic mass like an egg containing germs.',
+    famousPassageCitation: 'Nihon Shoki, Book I ("Age of the Gods")',
+    keyMythsIncluded: [
+      'Multiple Oral Variants of Creation & the Three Noble Kami',
+      'Tsukuyomi & Food-Kami Uke Mochi: Separation of Day and Night',
+      'Tenson Kōrin: Ninigi Descending with Mirror, Sword & Magatama',
+      'Izumo Fudoki: Kunibiki ("Land-Pulling" Myth of Giant Ropes)',
+    ],
+    recommendedTranslation: 'W. G. Aston (Tuttle Classics) & Michiko Y. Aoki (Records of Wind and Earth)',
+    linkedDeityIds: ['amaterasu', 'susanoo', 'omoikane', 'izanami'],
+    linkedMotifId: 'chaoskampf',
+  },
+
+  // ================= MESOPOTAMIAN =================
+  {
+    id: 'epic-of-gilgamesh',
+    title: 'The Epic of Gilgamesh & Descent of Inanna',
+    nativeTitle: 'Ša naqba īmuru ("He Who Saw the Deep")',
+    traditionId: 'mesopotamian',
+    dateComposed: 'c. 2100–1100 BCE',
+    medium: 'Clay Tablets',
+    authorOrCompiler: 'Sumerian Poets & Sîn-lēqi-unninni (Standard Babylonian)',
+    platePath: '/plates/books/epic-of-gilgamesh.webp',
+    tagline: 'World literature’s oldest epic masterpiece—probing mortal love, grief, seven underworld gates, and the Great Flood.',
+    synopsis:
+      'Excavated in 1853 from Ashurbanipal’s burned library at Nineveh after sleeping unread for two millennia, the twelve cuneiform tablets follow Uruk’s king Gilgamesh and wild companion Enkidu from Cedar Forest glory to Enkidu’s death and Utnapishtim’s Flood narrative.',
+    famousPassage:
+      'He who saw the Deep, the foundation of the country, who knew the proper ways, was wise in everything! Gilgamesh, who saw the Deep...',
+    famousPassageCitation: 'Standard Babylonian Epic of Gilgamesh, Tablet I.1–3',
+    keyMythsIncluded: [
+      'Taming of Enkidu, Battle in Cedar Forest & Ishtar’s Bull of Heaven',
+      'Gilgamesh Crossing the Waters of Death to Flood-Survivor Utnapishtim',
+      'Tablet XI: Enki’s Reed-Wall Warning & the Seven-Day Deluge',
+      'Sumerian Descent of Inanna Through Seven Gates of Ereshkigal',
+    ],
+    recommendedTranslation: 'Andrew George, The Epic of Gilgamesh (Penguin Classics) & Diane Wolkstein / Samuel Noah Kramer (Inanna)',
+    linkedDeityIds: ['enki', 'inanna', 'ereshkigal', 'marduk'],
+    linkedMotifId: 'great-deluge',
+  },
+  {
+    id: 'enuma-elish',
+    title: 'Enuma Elish ("When on High") & Atrahasis',
+    nativeTitle: 'Enūma Eliš',
+    traditionId: 'mesopotamian',
+    dateComposed: 'c. 1700–1100 BCE',
+    medium: 'Clay Tablets',
+    authorOrCompiler: 'Babylonian & Old Babylonian Temple Scribes',
+    platePath: '/plates/books/enuma-elish.webp',
+    tagline: 'Seven clay tablets of cosmic succession—Marduk splitting primordial dragon Tiamat to build stars, sky, and Babylon.',
+    synopsis:
+      'Chanted annually on the fourth day of Babylon’s Akitu New Year festival, Enuma Elish traces creation from mingled Apsu and Tiamat to Marduk’s storm-battle and fifty sacred names, while older Atrahasis explains humanity’s creation from clay mixed with divine blood.',
+    famousPassage:
+      'When on high the heaven had not been named, firm ground below had not been called by name, naught but primordial Apsu and mumumu-Tiamat mingled their waters as one...',
+    famousPassageCitation: 'Enuma Elish, Tablet I.1–5',
+    keyMythsIncluded: [
+      'Mingling of Sweet Waters (Apsu) and Salt Sea (Tiamat)',
+      'Marduk’s Four Winds & Arrow Splitting Tiamat into Sky and Earth',
+      'Seizure of the Tablet of Destinies & Fixing the Zodiac Calendar',
+      'Atrahasis: Fashioning Humans from Clay to Bear the Gods’ Labor',
+    ],
+    recommendedTranslation: 'Stephanie Dalley, Myths from Mesopotamia (Oxford World’s Classics) or Benjamin R. Foster',
+    linkedDeityIds: ['marduk', 'enki', 'inanna', 'ereshkigal'],
+    linkedMotifId: 'chaoskampf',
+  },
+
+  // ================= CELTIC =================
+  {
+    id: 'cath-maige-tuired',
+    title: 'Cath Maige Tuired & Lebor Gabála Érenn',
+    nativeTitle: 'Cath Maige Tuired ("The Second Battle of Moytura")',
+    traditionId: 'celtic',
+    dateComposed: 'Pre-Christian oral roots; MSS 9th–12th Century CE',
+    medium: 'Vellum Codex',
+    authorOrCompiler: 'Irish Filid Poets & Monastic Antiquarians',
+    platePath: '/plates/books/cath-maige-tuired.webp',
+    tagline: 'Core text of Ireland’s Mythological Cycle—chronicling the Tuatha Dé Danann, Lugh at Tara, and Balor’s defeat.',
+    synopsis:
+      'Preserved in Middle Irish vellum (Harleian MS 5280), Cath Maige Tuired brings the entire Irish pantheon onto a single stage: Nuada’s silver hand, the Dagda’s Undry Cauldron and union with the Morrígan, Brigid’s first keen, Lugh’s polymathic entry to Tara, and the Morrígan’s apocalyptic prophecy.',
+    famousPassage:
+      'Ask him whether a single man among you possesses all these arts at once; and if he does, I shall not seek to enter Tara.',
+    famousPassageCitation: 'Lugh at the Gate of Tara, Cath Maige Tuired §68',
+    keyMythsIncluded: [
+      'Four Treasures of the Tuatha Dé Danann (Cauldron, Spear, Sword, Stone)',
+      'Unjust Rule of Half-Fomorian Bres & Nuada’s Silver Arm',
+      'Lugh Samildánach Slaying Balor of the Baleful Eye',
+      'The Morrígan’s Twin Prophecies of Abundance & World’s End',
+    ],
+    recommendedTranslation: 'Elizabeth A. Gray (Irish Texts Society) or Mark Williams, Ireland’s Immortals (Princeton)',
+    linkedDeityIds: ['lugh', 'dagda', 'brigid', 'morrigan'],
+    linkedMotifId: 'eschatology',
+  },
+  {
+    id: 'tain-mabinogi',
+    title: 'Táin Bó Cúailnge & The Four Branches of the Mabinogi',
+    nativeTitle: 'Táin Bó Cúailnge & Pedair Cainc y Mabinogi',
+    traditionId: 'celtic',
+    dateComposed: 'c. 8th–12th Century CE (Irish & Middle Welsh MSS)',
+    medium: 'Vellum Codex',
+    authorOrCompiler: 'Book of the Dun Cow (Lebor na hUidre) & White Book of Rhydderch',
+    platePath: '/plates/books/tain-mabinogi.webp',
+    tagline: 'Twin Celtic masterpieces—Ulster’s Cú Chulainn and Morrígan alongside Wales’s enchanting Otherworld tales.',
+    synopsis:
+      'In Ireland’s Ulster Cycle epic The Táin, teenaged Cú Chulainn (mortal son of Lugh) holds off Queen Medb’s army single-handedly at river fords under the Morrígan’s gaze; across the Irish Sea, Wales’s Four Branches weave Pwyll’s year in Annwn, Rhiannon’s birds, Branwen’s cauldron, and Lleu Llaw Gyffes.',
+    famousPassage:
+      'I shall be an eel coiled about your feet in the ford, a grey she-wolf driving cattle upon you, and a hornless red heifer leading the herd.',
+    famousPassageCitation: 'The Morrígan to Cú Chulainn, Táin Bó Cúailnge',
+    keyMythsIncluded: [
+      'Cú Chulainn’s Boyhood Deeds, Ríastrad Warp-Spasm & Ferdiad Duel',
+      'The Morrígan Testing Cú Chulainn at the Ford',
+      'First Branch of Mabinogi: Pwyll Exchanging Realms with Arawn of Annwn',
+      'Fourth Branch: Blodeuwedd Conjured from Oak, Broom & Meadowsweet',
+    ],
+    recommendedTranslation: 'Thomas Kinsella, The Táin (Oxford) & Sioned Davies, The Mabinogion (Oxford World’s Classics)',
+    linkedDeityIds: ['morrigan', 'lugh', 'dagda', 'brigid'],
+    linkedMotifId: 'chaoskampf',
+  },
+
+  // ================= MESOAMERICAN =================
+  {
+    id: 'popol-vuh',
+    title: 'Popol Vuh ("Book of the Community / Council")',
+    nativeTitle: 'Popol Wuj',
+    traditionId: 'mesoamerican',
+    dateComposed: 'Classic Maya glyphic roots; K’iche’ MS c. 1550 CE',
+    medium: 'Screenfold Codex',
+    authorOrCompiler: 'K’iche’ Maya Noble Council of Q’umarkaj (Santa Cruz del Quiché)',
+    platePath: '/plates/books/popol-vuh.webp',
+    tagline: 'Crown jewel of Indigenous American literature—creation from maize and the Hero Twins outwitting the Lords of Death.',
+    synopsis:
+      'Written secretly in poetic K’iche’ Maya when Spanish authorities burned screenfold hieroglyphic books ("There is an original book written long ago, but its sight is hidden..."), the Popol Vuh spans primordial silence, false sun Vucub Caquix, Xibalba’s ballcourt, and the shaping of humans from sacred corn.',
+    famousPassage:
+      'This is the account of how all was in suspense, all calm, in silence; all motionless, quiet, and empty was the expanse of the sky.',
+    famousPassageCitation: 'Popol Vuh, Preamble / Part I',
+    keyMythsIncluded: [
+      'Heart of Sky & Plumed Serpent Q’uq’umatz Raising Mountains from Water',
+      'Three Trial Creations (Animals, Mud, Wood) Before Maize Humanity',
+      'Defeat of Boastful False-Sun Bird Vucub Caquix (Seven Macaw)',
+      'Hero Twins Hunahpu & Xbalanque Conquering Xibalba & Becoming Sun/Moon',
+    ],
+    recommendedTranslation: 'Dennis Tedlock (Simon & Schuster) or Allen J. Christenson (Oklahoma)',
+    linkedDeityIds: ['quetzalcoatl', 'mictlantecuhtli', 'tezcatlipoca'],
+    linkedMotifId: 'cosmogony',
+  },
+  {
+    id: 'codex-chimalpopoca-borgia',
+    title: 'Legend of the Suns (Codex Chimalpopoca) & Florentine Codex',
+    nativeTitle: 'Leyenda de los Soles & Historia General (Nahuatl)',
+    traditionId: 'mesoamerican',
+    dateComposed: '15th–16th Century CE (from pre-conquest screenfolds)',
+    medium: 'Screenfold Codex',
+    authorOrCompiler: 'Nahua Tlamatinime ("Knowers of Things") & Codex Borgia Painters',
+    platePath: '/plates/books/codex-chimalpopoca-borgia.webp',
+    tagline: 'Classical Nahuatl chronicles of the Five Cosmic Suns, Quetzalcoatl in Mictlan, and Huitzilopochtli at Coatepec.',
+    synopsis:
+      'Preserved in vibrant deerskin ritual almanacs (Codex Borgia) and Nahuatl transcriptions recorded with Mexica elders, these sources recount the four cataclysmic eras of Jaguars, Wind, Fire-Rain, and Flood, Quetzalcoatl retrieving ancestral bones, and Nanahuatzin leaping into Teotihuacan’s bonfire as the Fifth Sun.',
+    famousPassage:
+      'It was still dark night; there was no sunlight, no daylight yet, when the gods gathered together at Teotihuacan saying: "Who will take it upon himself that dawn shall break?"',
+    famousPassageCitation: 'Florentine Codex, Book VII, Chapter 2',
+    keyMythsIncluded: [
+      'Alternating Reign of Tezcatlipoca & Quetzalcoatl Over Four Past Suns',
+      'Quetzalcoatl Sounding the Conch in Mictlan for Ancestral Seed-Bones',
+      'Nanahuatzin’s Leap into the Brazier to Become the Fifth Sun (Nahui Ollin)',
+      'Huitzilopochtli’s Fully Armored Birth Scattering 400 Stars at Coatepec',
+    ],
+    recommendedTranslation: 'John Bierhorst, History and Mythology of the Aztecs (Arizona) & Miguel León-Portilla, Aztec Thought and Culture',
+    linkedDeityIds: ['quetzalcoatl', 'tezcatlipoca', 'huitzilopochtli', 'mictlantecuhtli'],
+    linkedMotifId: 'eschatology',
+  },
+
+  // ================= YORUBA =================
+  {
+    id: 'odu-ifa',
+    title: 'The Odu Ifá Literary Corpus (256 Chapters)',
+    nativeTitle: 'Odù Ifá / Ẹsẹ Ifá',
+    traditionId: 'yoruba',
+    dateComposed: 'Ancient Ilé-Ifẹ̀ Oral Canon – Living Present',
+    medium: 'Living Oral Canon',
+    authorOrCompiler: 'Babalawo & Iyanifa Divination Guilds of Yorubaland & Diaspora',
+    platePath: '/plates/books/odu-ifa.webp',
+    tagline: 'UNESCO-honored 256-chapter oral encyclopedia encoding Yoruba creation, ethics, medicine, and Orisha parables.',
+    synopsis:
+      'Structured mathematically around 16 principal Odu and 240 composite combinations (256 chapters, each holding hundreds of chanted poetic verses called Ese Ifá), the Odu Ifá serves as a vast living library invoked whenever Orunmila’s palm nuts or divining chain diagnose human destiny (Ori).',
+    famousPassage:
+      'Truth is the character of Olodumare; Truth is the word that never fails; Ifá is Truth—the power surpassing every earthly army.',
+    famousPassageCitation: 'Ese Ifá (Odu Eji Ogbe / Oturupon Meji Oral Canon)',
+    keyMythsIncluded: [
+      'Obatala & Oduduwa Descending the Golden Chain to Spread Ilé-Ifẹ̀',
+      'Ogunda Meji: Ogun’s Iron Cutlass Opening the Primordial Forest Road',
+      'Ose Tura: Oshun Saving Parched Earth When Excluded by the 16 Irunmole',
+      'Eshu’s Two-Colored Cap Testing Sworn Friends at the Crossroads',
+    ],
+    recommendedTranslation: 'Wande Abimbola, Ifá: An Exposition of Ifá Literary Corpus (Oxford) & Sixteen Great Poems of Ifá (UNESCO)',
+    linkedDeityIds: ['orunmila', 'eshu', 'obatala', 'oshun'],
+    linkedMotifId: 'cosmogony',
+  },
+  {
+    id: 'oriki-ife-chronicles',
+    title: 'Oriki Orisha Praise Poetry & Royal Oyo–Ifẹ̀ Chronicles',
+    nativeTitle: 'Oríkì Òrìṣà & Ìtàn Ilé-Ifẹ̀ / Ọ̀yọ́',
+    traditionId: 'yoruba',
+    dateComposed: 'c. 1100 CE – Living Present',
+    medium: 'Living Oral Canon',
+    authorOrCompiler: 'Yoruba Royal Arokin Bards, Priestesses & Bata Ensembles',
+    platePath: '/plates/books/oriki-ife-chronicles.webp',
+    tagline: 'Performative tonal poetry and royal histories invoking Shango’s lightning ascension, Oya’s whirlwind, and Obatala’s patience.',
+    synopsis:
+      'Performed alongside talking drums (dundun and bata) across Nigeria, Benin, Cuba (Patakís), and Brazil, Oriki praise-chants and Itan narratives preserve the dramatic royal transformation of Oyo’s fourth king Shango ("Ọba Kò So!"), Oya’s Niger River tempests, and Obatala’s silent endurance.',
+    famousPassage:
+      'He dances as swiftly as fire upon the rooftop! King who splits the sky with thunderstones and strikes the liar on his own threshold—Ọba Kò So!',
+    famousPassageCitation: 'Traditional Oriki Shango (Oyo Oral Canon)',
+    keyMythsIncluded: [
+      'Ọba Kò So: King Shango’s Ascension in Lightning Outside Oyo',
+      'Oya Shedding the Magical Buffalo Hide & Riding Ahead of Thunder',
+      'Obatala’s Silent Dignity in Unjust Captivity & Restoration of Rain',
+      'Atlantic Preservation of Patakís Across Lucumí & Candomblé Houses',
+    ],
+    recommendedTranslation: 'Karin Barber, I Could Speak Until Tomorrow (Edinburgh) & Jacob K. Olupona, City of 201 Gods (California)',
+    linkedDeityIds: ['shango', 'oya', 'obatala', 'oshun'],
+    linkedMotifId: 'theft-of-fire',
+  },
+];
