@@ -1,0 +1,45 @@
+# Render.com Static Site Blueprint — MYTHOS ARCHIVE & MYTHOS BESTIARY
+# Free global CDN hosting (0 web-service instance hours, zero cold-start spin-down)
+services:
+  - type: web
+    name: mythos-archive
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20.20.0"
+    routes:
+      # SPA fallback so deep links & hard refreshes on /traditions/*, /deities, /atlas, etc. resolve cleanly
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'none'"
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Permissions-Policy
+        value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+      - path: /index.html
+        name: Cache-Control
+        value: "no-cache"
+      - path: /assets/*
+        name: Cache-Control
+        value: "public, max-age=31536000, immutable"
+      - path: /plates/*
+        name: Cache-Control
+        value: "public, max-age=31536000, immutable"
+      - path: /videos/*
+        name: Cache-Control
+        value: "public, max-age=31536000, immutable"

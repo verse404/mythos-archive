@@ -28,3 +28,12 @@ npm run lint
 npm run build
 npm run preview
 ```
+
+## Deploy on Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/verse404/mythos-archive)
+
+This repository includes a ready-to-use `render.yaml` Blueprint configured as a **Render Static Site** (`staticPublishPath: ./dist` — free global CDN with zero cold-start spin-down, SPA client-side routing rewrites, strict CSP/security headers, and immutable asset caching):
+
+1. Click **[Deploy to Render](https://render.com/deploy?repo=https://github.com/verse404/mythos-archive)** above (or open **New → Blueprint** at `https://dashboard.render.com/blueprints` and select `verse404/mythos-archive`).
+2. Click **Apply** — Render will run `npm ci && npm run build` and publish `./dist` to `https://mythos-archive.onrender.com` (with auto-deploys on every push to `main`).
