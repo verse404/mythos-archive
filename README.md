@@ -29,7 +29,14 @@ npm run build
 npm run preview
 ```
 
-## Deploy on Render
+## Live Site (GitHub Pages)
+
+- **Pantheons (Gods):** https://verse404.github.io/mythos-archive/
+- **Bestiary (Monsters):** https://verse404.github.io/mythos-archive/?realm=bestiary
+
+Automatically built and deployed from `main` via [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) (using `VITE_BASE_PATH=/mythos-archive/` and an SPA `404.html` fallback).
+
+## Optional: Deploy on Render
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/verse404/mythos-archive)
 

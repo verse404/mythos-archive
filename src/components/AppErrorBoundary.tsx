@@ -51,7 +51,7 @@ export class AppErrorBoundary extends React.Component<
               type="button"
               className="btn-secondary"
               onClick={() => {
-                window.location.href = '/';
+                window.location.href = import.meta.env.BASE_URL || '/';
               }}
             >
               {isZh ? '返回首页' : 'Return Home'}

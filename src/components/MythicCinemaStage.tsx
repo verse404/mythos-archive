@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Pause, Play, Sparkles, Zap } from 'lucide-react';
+import { assetUrl } from '../data/visuals';
 import { useI18n } from '../i18n/I18nContext';
 import type { RouteState } from '../types/mythology';
 
@@ -97,10 +98,12 @@ export const MythicCinemaStage: React.FC<MythicCinemaStageProps> = ({
 
   const activeConfig = SCENE_CONFIGS[sceneIdx];
   const activeText = cinemaScenes[activeConfig.id];
-  const activeVideo =
-    realm === 'bestiary' ? activeConfig.bestiaryVideoSrc : activeConfig.videoSrc;
-  const activePoster =
-    realm === 'bestiary' ? activeConfig.bestiaryPosterSrc : activeConfig.posterSrc;
+  const activeVideo = assetUrl(
+    realm === 'bestiary' ? activeConfig.bestiaryVideoSrc : activeConfig.videoSrc
+  );
+  const activePoster = assetUrl(
+    realm === 'bestiary' ? activeConfig.bestiaryPosterSrc : activeConfig.posterSrc
+  );
 
   useEffect(() => {
     const vid = videoRef.current;
@@ -378,7 +381,7 @@ export const MythicCinemaStage: React.FC<MythicCinemaStageProps> = ({
         {SCENE_CONFIGS.map((sc, idx) => {
           const isActive = idx === sceneIdx;
           const scText = cinemaScenes[sc.id];
-          const thumbSrc = realm === 'bestiary' ? sc.bestiaryPosterSrc : sc.posterSrc;
+          const thumbSrc = assetUrl(realm === 'bestiary' ? sc.bestiaryPosterSrc : sc.posterSrc);
           return (
             <button
               key={sc.id}

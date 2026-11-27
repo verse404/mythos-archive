@@ -13,7 +13,7 @@ import {
   X,
 } from 'lucide-react';
 import type { ConnectionKind, InspirationEvent } from '../data/connections';
-import { getDeityPortrait, getPortalPlate, getTraditionPlate } from '../data/visuals';
+import { assetUrl, getDeityPortrait, getPortalPlate, getTraditionPlate } from '../data/visuals';
 import { copyShareableUrl } from '../hooks/useRouter';
 import { useI18n } from '../i18n/I18nContext';
 import { compactTraditionName } from '../i18n/uiStrings';
@@ -767,7 +767,7 @@ export const ConnectionsPage: React.FC<ConnectionsPageProps> = ({
           <div className="stack-sm">
             <figure className="banner-plate-frame">
               <img
-                src={activeEvent.platePath}
+                src={assetUrl(activeEvent.platePath)}
                 alt={activeEvent.headline}
                 className="banner-plate-img"
               />
@@ -825,7 +825,7 @@ export const ConnectionsPage: React.FC<ConnectionsPageProps> = ({
             <article key={root.id} className="visual-card conn-root-card">
               <div className="visual-card-media">
                 <img
-                  src={root.platePath}
+                  src={assetUrl(root.platePath)}
                   alt={root.name}
                   className="visual-card-img"
                   loading="lazy"

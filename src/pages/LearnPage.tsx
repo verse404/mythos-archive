@@ -13,6 +13,7 @@ import {
 import { DeityReaderDrawer } from '../components/DeityReaderDrawer';
 import {
   MOTIF_PLATE,
+  assetUrl,
   getDeityPortrait,
   getFlashcardPlate,
   getQuizPlate,
@@ -79,13 +80,13 @@ function cryptoShuffle<T>(arr: T[]): T[] {
 }
 
 const TRACK_PLATES: Record<string, string> = {
-  'track-foundations': '/plates/portals/portal-traditions.webp',
-  'track-storm-serpent': '/plates/motif-chaoskampf.webp',
-  'track-underworld': '/plates/motif-katabasis.webp',
-  'track-tricksters-wisdom': '/plates/motif-fire.webp',
-  'bst-track-dragons': '/plates/bestiary/learn/bst-track-dragons.webp',
-  'bst-track-chimeras': '/plates/bestiary/learn/bst-track-chimeras.webp',
-  'bst-track-liminal': '/plates/bestiary/learn/bst-track-liminal.webp',
+  'track-foundations': assetUrl('/plates/portals/portal-traditions.webp'),
+  'track-storm-serpent': assetUrl('/plates/motif-chaoskampf.webp'),
+  'track-underworld': assetUrl('/plates/motif-katabasis.webp'),
+  'track-tricksters-wisdom': assetUrl('/plates/motif-fire.webp'),
+  'bst-track-dragons': assetUrl('/plates/bestiary/learn/bst-track-dragons.webp'),
+  'bst-track-chimeras': assetUrl('/plates/bestiary/learn/bst-track-chimeras.webp'),
+  'bst-track-liminal': assetUrl('/plates/bestiary/learn/bst-track-liminal.webp'),
 };
 
 export const LearnPage: React.FC<LearnPageProps> = ({
@@ -436,9 +437,11 @@ export const LearnPage: React.FC<LearnPageProps> = ({
                   <img
                     src={
                       TRACK_PLATES[track.id] ??
-                      (realm === 'bestiary'
-                        ? '/plates/bestiary/cinema-leviathans.webp'
-                        : '/plates/cosmic-tree-hero.webp')
+                      assetUrl(
+                        realm === 'bestiary'
+                          ? '/plates/bestiary/cinema-leviathans.webp'
+                          : '/plates/cosmic-tree-hero.webp'
+                      )
                     }
                     alt={track.title}
                     className="atlas-plaque-img"

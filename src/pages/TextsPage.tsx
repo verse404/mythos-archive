@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { ArrowRight, BookMarked, Check, Layers, Scale, ScrollText, Share2 } from 'lucide-react';
 import { DeityReaderDrawer } from '../components/DeityReaderDrawer';
-import { getDeityPortrait } from '../data/visuals';
+import { assetUrl, getDeityPortrait } from '../data/visuals';
 import { copyShareableUrl } from '../hooks/useRouter';
 import { useI18n } from '../i18n/I18nContext';
 import { BOOK_MEDIUM_LABEL, compactTraditionName } from '../i18n/uiStrings';
@@ -266,7 +266,7 @@ export const TextsPage: React.FC<TextsPageProps> = ({
 
         <figure className="banner-plate-frame">
           <img
-            src={spotlightBook.platePath}
+            src={assetUrl(spotlightBook.platePath)}
             alt={spotlightBook.title}
             className="banner-plate-img"
           />
@@ -293,7 +293,7 @@ export const TextsPage: React.FC<TextsPageProps> = ({
               >
                 <div className="visual-card-media">
                   <img
-                    src={book.platePath}
+                    src={assetUrl(book.platePath)}
                     alt={book.title}
                     className="visual-card-img"
                     loading="lazy"

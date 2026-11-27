@@ -32,7 +32,7 @@ import {
   type DndEncounterNode,
   type EndingTier,
 } from '../data/ascensionGame';
-import { getDeityPortrait } from '../data/visuals';
+import { assetUrl, getDeityPortrait } from '../data/visuals';
 import { copyShareableUrl } from '../hooks/useRouter';
 import { useI18n } from '../i18n/I18nContext';
 import { compactTraditionName, splitTitleHead } from '../i18n/uiStrings';
@@ -1090,7 +1090,7 @@ export const AscensionGamePage: React.FC<AscensionGamePageProps> = ({
                             {isOpen && node ? (
                               <>
                                 <img
-                                  src={node.platePath}
+                                  src={assetUrl(node.platePath)}
                                   alt={node.title}
                                   className="dnd-codex-thumb"
                                   loading="lazy"
@@ -1164,7 +1164,7 @@ const EncounterStageView: React.FC<EncounterStageViewProps> = ({
   return (
     <section className="dnd-encounter-card" aria-labelledby="dnd-encounter-heading">
       <div className="dnd-scene-media">
-        <img src={node.platePath} alt={node.title} className="dnd-scene-img" />
+        <img src={assetUrl(node.platePath)} alt={node.title} className="dnd-scene-img" />
         <div className="dnd-scene-scrim" />
         <div className="dnd-scene-overlay-plaque">
           <span className="folio-kicker">{node.chapterLabel}</span>
@@ -1391,7 +1391,7 @@ const EndingChronicleView: React.FC<EndingChronicleViewProps> = ({
   return (
     <section className={bannerClass} aria-labelledby="dnd-ending-title">
       <div className="dnd-scene-media">
-        <img src={ending.platePath} alt={ending.title} className="dnd-scene-img" />
+        <img src={assetUrl(ending.platePath)} alt={ending.title} className="dnd-scene-img" />
         <div className="dnd-scene-scrim" />
         <div className="dnd-scene-overlay-plaque">
           <div className="row-wrap">

@@ -1,40 +1,50 @@
 import type { ArchetypeId, Deity, LineageNode, PageId, TraditionId } from '../types/mythology';
 import type { RealmMode } from '../utils/storage';
 
+const ASSET_BASE = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+
+export function assetUrl(path: string): string {
+  if (!path || !path.startsWith('/')) return path;
+  if (ASSET_BASE && path.startsWith(`${ASSET_BASE}/`)) return path;
+  return `${ASSET_BASE}${path}`;
+}
+
 export const TRADITION_PLATE: Record<TraditionId, string> = {
-  greek: '/plates/trad-greek.webp',
-  norse: '/plates/trad-norse.webp',
-  egyptian: '/plates/trad-egyptian.webp',
-  hindu: '/plates/trad-hindu.webp',
-  chinese: '/plates/trad-chinese.webp',
-  japanese: '/plates/trad-japanese.webp',
-  mesopotamian: '/plates/trad-mesopotamian.webp',
-  celtic: '/plates/trad-celtic.webp',
-  mesoamerican: '/plates/trad-mesoamerican.webp',
-  yoruba: '/plates/trad-yoruba.webp',
+  greek: assetUrl('/plates/trad-greek.webp'),
+  norse: assetUrl('/plates/trad-norse.webp'),
+  egyptian: assetUrl('/plates/trad-egyptian.webp'),
+  hindu: assetUrl('/plates/trad-hindu.webp'),
+  chinese: assetUrl('/plates/trad-chinese.webp'),
+  japanese: assetUrl('/plates/trad-japanese.webp'),
+  mesopotamian: assetUrl('/plates/trad-mesopotamian.webp'),
+  celtic: assetUrl('/plates/trad-celtic.webp'),
+  mesoamerican: assetUrl('/plates/trad-mesoamerican.webp'),
+  yoruba: assetUrl('/plates/trad-yoruba.webp'),
 };
 
 export const PORTAL_PLATE: Record<Exclude<PageId, 'home'>, string> = {
-  traditions: '/plates/portals/portal-traditions.webp',
-  deities: '/plates/portals/portal-deities.webp',
-  motifs: '/plates/portals/portal-motifs.webp',
-  connections: '/plates/portals/portal-connections.webp',
-  texts: '/plates/portals/portal-texts.webp',
-  ascension: '/plates/portals/portal-ascension.webp',
-  lineages: '/plates/portals/portal-lineages.webp',
-  atlas: '/plates/portals/portal-atlas.webp',
-  learn: '/plates/portals/portal-learn.webp',
+  traditions: assetUrl('/plates/portals/portal-traditions.webp'),
+  deities: assetUrl('/plates/portals/portal-deities.webp'),
+  motifs: assetUrl('/plates/portals/portal-motifs.webp'),
+  connections: assetUrl('/plates/portals/portal-connections.webp'),
+  texts: assetUrl('/plates/portals/portal-texts.webp'),
+  ascension: assetUrl('/plates/portals/portal-ascension.webp'),
+  lineages: assetUrl('/plates/portals/portal-lineages.webp'),
+  atlas: assetUrl('/plates/portals/portal-atlas.webp'),
+  learn: assetUrl('/plates/portals/portal-learn.webp'),
 };
 
 export function getBrandEmblem(realm: RealmMode = 'pantheons'): string {
-  return realm === 'bestiary'
-    ? '/plates/bestiary/bestiary-emblem.webp'
-    : '/plates/celestial-compass.webp';
+  return assetUrl(
+    realm === 'bestiary'
+      ? '/plates/bestiary/bestiary-emblem.webp'
+      : '/plates/celestial-compass.webp'
+  );
 }
 
 export function getTraditionPlate(tradId: TraditionId, realm: RealmMode = 'pantheons'): string {
   if (realm === 'bestiary') {
-    return `/plates/bestiary/traditions/trad-${tradId}.webp`;
+    return assetUrl(`/plates/bestiary/traditions/trad-${tradId}.webp`);
   }
   return TRADITION_PLATE[tradId];
 }
@@ -44,14 +54,14 @@ export function getPortalPlate(
   realm: RealmMode = 'pantheons'
 ): string {
   if (realm === 'bestiary') {
-    return `/plates/bestiary/portals/portal-${pageId}.webp`;
+    return assetUrl(`/plates/bestiary/portals/portal-${pageId}.webp`);
   }
   return PORTAL_PLATE[pageId];
 }
 
 // Dedicated 4:5 (800x1000) portrait for every deity or monster
 export function getDeityPortrait(deityId: string): string {
-  return `/plates/deities/${deityId}.webp`;
+  return assetUrl(`/plates/deities/${deityId}.webp`);
 }
 
 // Dedicated 4:5 (800x1000) portrait for every single lineage node across all 10 trees
@@ -60,12 +70,12 @@ export function getLineageNodePortrait(
   realm: RealmMode = 'pantheons'
 ): string {
   if (node.deityId) {
-    return `/plates/deities/${node.deityId}.webp`;
+    return assetUrl(`/plates/deities/${node.deityId}.webp`);
   }
   if (realm === 'bestiary') {
-    return `/plates/bestiary/lineage/${node.id}.webp`;
+    return assetUrl(`/plates/bestiary/lineage/${node.id}.webp`);
   }
-  return `/plates/lineage/${node.id}.webp`;
+  return assetUrl(`/plates/lineage/${node.id}.webp`);
 }
 
 const BESTIARY_MOTIF_IDS = new Set([
@@ -80,17 +90,17 @@ const BESTIARY_MOTIF_IDS = new Set([
 // Dedicated 16:10 (960x600) scene plate for every specific cultural retelling of a motif
 export function getRetellingPlate(motifId: string, traditionId: TraditionId): string {
   if (BESTIARY_MOTIF_IDS.has(motifId)) {
-    return `/plates/bestiary/retellings/${motifId}-${traditionId}.webp`;
+    return assetUrl(`/plates/bestiary/retellings/${motifId}-${traditionId}.webp`);
   }
-  return `/plates/retellings/${motifId}-${traditionId}.webp`;
+  return assetUrl(`/plates/retellings/${motifId}-${traditionId}.webp`);
 }
 
 // Dedicated 16:10 (960x600) plate for every diffusion route and historical milestone
 export function getAtlasPlate(id: string, realm: RealmMode = 'pantheons'): string {
   if (realm === 'bestiary') {
-    return `/plates/bestiary/atlas/${id}.webp`;
+    return assetUrl(`/plates/bestiary/atlas/${id}.webp`);
   }
-  return `/plates/atlas/${id}.webp`;
+  return assetUrl(`/plates/atlas/${id}.webp`);
 }
 
 // Exact subject-matched 16:10 scene plate for every Flashcard
@@ -164,11 +174,13 @@ export const BESTIARY_QUIZ_PLATE: Record<string, string> = {
 };
 
 export function getFlashcardPlate(cardId: string, realm: RealmMode = 'pantheons'): string | undefined {
-  return realm === 'bestiary' ? BESTIARY_FLASHCARD_PLATE[cardId] : FLASHCARD_PLATE[cardId];
+  const raw = realm === 'bestiary' ? BESTIARY_FLASHCARD_PLATE[cardId] : FLASHCARD_PLATE[cardId];
+  return raw ? assetUrl(raw) : undefined;
 }
 
 export function getQuizPlate(questionId: string, realm: RealmMode = 'pantheons'): string | undefined {
-  return realm === 'bestiary' ? BESTIARY_QUIZ_PLATE[questionId] : QUIZ_PLATE[questionId];
+  const raw = realm === 'bestiary' ? BESTIARY_QUIZ_PLATE[questionId] : QUIZ_PLATE[questionId];
+  return raw ? assetUrl(raw) : undefined;
 }
 
 export const TRADITION_SHORT_HOOK: Record<TraditionId, string> = {
@@ -185,18 +197,18 @@ export const TRADITION_SHORT_HOOK: Record<TraditionId, string> = {
 };
 
 export const MOTIF_PLATE: Record<string, string> = {
-  cosmogony: '/plates/motif-cosmogony.webp',
-  'great-deluge': '/plates/motif-deluge.webp',
-  katabasis: '/plates/motif-katabasis.webp',
-  'theft-of-fire': '/plates/motif-fire.webp',
-  chaoskampf: '/plates/motif-chaoskampf.webp',
-  eschatology: '/plates/motif-eschatology.webp',
-  'sea-leviathan': '/plates/motif-sea-leviathan.webp',
-  'multi-headed': '/plates/motif-multi-headed.webp',
-  'hell-hounds': '/plates/motif-hell-hounds.webp',
-  'sacred-chimeras': '/plates/motif-sacred-chimeras.webp',
-  shapeshifters: '/plates/motif-shapeshifters.webp',
-  'apocalypse-beasts': '/plates/motif-apocalypse-beasts.webp',
+  cosmogony: assetUrl('/plates/motif-cosmogony.webp'),
+  'great-deluge': assetUrl('/plates/motif-deluge.webp'),
+  katabasis: assetUrl('/plates/motif-katabasis.webp'),
+  'theft-of-fire': assetUrl('/plates/motif-fire.webp'),
+  chaoskampf: assetUrl('/plates/motif-chaoskampf.webp'),
+  eschatology: assetUrl('/plates/motif-eschatology.webp'),
+  'sea-leviathan': assetUrl('/plates/motif-sea-leviathan.webp'),
+  'multi-headed': assetUrl('/plates/motif-multi-headed.webp'),
+  'hell-hounds': assetUrl('/plates/motif-hell-hounds.webp'),
+  'sacred-chimeras': assetUrl('/plates/motif-sacred-chimeras.webp'),
+  shapeshifters: assetUrl('/plates/motif-shapeshifters.webp'),
+  'apocalypse-beasts': assetUrl('/plates/motif-apocalypse-beasts.webp'),
 };
 
 export const MOTIF_SHORT_TAGLINE: Record<string, string> = {

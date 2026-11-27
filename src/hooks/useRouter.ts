@@ -4,6 +4,18 @@ import type { PageId, RouteState, TraditionId } from '../types/mythology';
 import type { Locale, RealmMode } from '../utils/storage';
 
 const SAFE_SLUG_RE = /^[a-z0-9-]{2,64}$/;
+const ROUTER_BASE = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+
+function stripRouterBase(pathname: string): string {
+  if (!ROUTER_BASE) return pathname;
+  const lowerPath = pathname.toLowerCase();
+  const lowerBase = ROUTER_BASE.toLowerCase();
+  if (lowerPath === lowerBase) return '/';
+  if (lowerPath.startsWith(`${lowerBase}/`)) {
+    return pathname.slice(ROUTER_BASE.length);
+  }
+  return pathname;
+}
 
 function sanitizeSlug(val: string | null): string | undefined {
   if (!val) return undefined;
@@ -234,7 +246,7 @@ const BESTIARY_SEO: Record<Locale, Record<PageId, { title: string; description: 
 };
 
 export function parseLocation(pathname: string, search = ''): RouteState {
-  const segments = pathname
+  const segments = stripRouterBase(pathname)
     .replace(/^\/+|\/+$/g, '')
     .split('/')
     .filter(Boolean);
@@ -354,10 +366,11 @@ export function buildUrl(route: RouteState): string {
     params.set('pantheon', route.pantheonFocus);
   }
 
-  let basePath = route.page === 'home' ? '/' : `/${route.page}`;
+  let routePath = route.page === 'home' ? '/' : `/${route.page}`;
   if (route.page === 'traditions' && route.traditionSlug) {
-    basePath = `/traditions/${route.traditionSlug}`;
+    routePath = `/traditions/${route.traditionSlug}`;
   }
+  const basePath = ROUTER_BASE ? `${ROUTER_BASE}${routePath}` : routePath;
 
   if (route.page === 'deities' && route.compareIds && route.compareIds.length >= 2) {
     params.set('compare', route.compareIds.slice(0, 4).join(','));
